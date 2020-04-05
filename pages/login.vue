@@ -3,7 +3,7 @@
     <h3>Login</h3>
     <form @submit.prevent="pressed">
       <div class="login">
-        <input type="text" placeholder="login" v-model="email" />
+        <input type="text" placeholder="email" v-model="email" />
       </div>
       <div class="password">
         <input type="password" placeholder="password" v-model="password" />
@@ -32,8 +32,7 @@
           .auth()
           .signInWithEmailAndPassword(this.email, this.password)
           .then(data => {
-            console.log(data)
-            // this.$router.replace({ name: 'secret' })
+            this.$router.replace({ name: 'secret' })
           })
           .catch(error => {
             this.error = error
